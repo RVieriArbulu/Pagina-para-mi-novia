@@ -10,68 +10,104 @@
 </head>
 
 <body>
-    <div id="cielo-estrellas"></div>
 
-    <!-- CONTENEDOR DE CORAZONES -->
-    <div id="corazones-fondo"></div>
+<div id="bloqueo">
+    <h2>🔒 Acceso privado</h2>
+    <p>Ingresa el PIN</p>
 
-    <!-- Música (oculta) -->
-<audio id="musica" loop>
+    <div id="circulos">
+        <span class="punto"></span>
+        <span class="punto"></span>
+        <span class="punto"></span>
+        <span class="punto"></span>
+    </div>
+
+    <div id="teclado">
+        <button onclick="agregarNumero(1)">1</button>
+        <button onclick="agregarNumero(2)">2</button>
+        <button onclick="agregarNumero(3)">3</button>
+        <button onclick="agregarNumero(4)">4</button>
+        <button onclick="agregarNumero(5)">5</button>
+        <button onclick="agregarNumero(6)">6</button>
+        <button onclick="agregarNumero(7)">7</button>
+        <button onclick="agregarNumero(8)">8</button>
+        <button onclick="agregarNumero(9)">9</button>
+        <button onclick="borrar()">⌫</button>
+        <button onclick="agregarNumero(0)">0</button>
+    </div>
+</div>
+
+<div id="contenido" style="display:none;">
+
+<div id="cielo-estrellas"></div>
+
+<!-- CONTENEDOR DE CORAZONES -->
+<div id="corazones-fondo"></div>
+
+<!-- Música -->
+<audio id="musica">
     <source src="assets/Rosapastel.mp3" type="audio/mpeg">
 </audio>
 
-    <!-- VENTANA BIENVENIDA -->
-    <div id="bienvenida">
-        <div id="ventana">
-            <p>Gracias por existir en mi vida ❤️</p>
-            <button onclick="cerrarVentana()">Entrar</button>
+<!-- VENTANA BIENVENIDA -->
+<div id="bienvenida">
+    <div id="ventana">
+        <p>Gracias por existir en mi vida ❤️</p>
+        <button onclick="cerrarVentana()">Entrar</button>
+    </div>
+</div>
+
+<!-- VENTANA MENSAJE SECRETO -->
+<div id="ventana-secreta">
+    <div id="contenido-secreto">
+        <p id="texto-secreto"></p>
+        <button onclick="cerrarSecreto()">Cerrar</button>
+    </div>
+</div>
+
+<h1>🥰 HOLA MI NEGRITA HERMOSA 🥰</h1>
+<h2>Hoy cumplimos 11 meses de novios y 12 meses de mejores amigos</h2>
+<div id="contador"></div>
+
+<button onclick="modoNoche()" id="botonModo">🌙 Activar modo noche</button><br>
+<button id="botonMusica" onclick="toggleMusica()">Pausar música</button>
+
+<img src="https://i.postimg.cc/d0qzvrbT/foto.jpg" alt="Nosotros" id="foto" onclick="corazonesExtra()">
+
+<button onclick="mensaje()">Leer mensaje</button>
+<p id="sorpresa"></p>
+
+<!-- GALERÍA -->
+<h2 style="color:#d63384;margin-top:40px;">🌼 FOTITOS DE USTED AMORCITO 🌼</h2>
+
+<div class="galeria-contenedor">
+    <button class="prev" onclick="moverGaleria(-1)">❮</button>
+
+    <div class="galeria">
+        <div class="slider" id="slider">
+            <img src="https://i.postimg.cc/fTnsk0Ng/foto1.jpg">
+            <img src="https://i.postimg.cc/267QvZJp/foto2.jpg">
+            <img src="https://i.postimg.cc/mg17jqqH/foto3.jpg">
+            <img src="https://i.postimg.cc/Rh0HHbKL/foto4.jpg">
+            <img src="https://i.postimg.cc/tgTJDV72/foto5.jpg">
+            <img src="https://i.postimg.cc/ZqGm39NV/foto6.jpg">
+            <img src="https://i.postimg.cc/rsJ2vQP9/foto7.jpg">
+            <img src="https://i.postimg.cc/nc3t2S7X/foto8.jpg">
+            <img src="https://i.postimg.cc/Nf3k3BRD/foto9.jpg">
         </div>
     </div>
 
-    <!-- VENTANA MENSAJE SECRETO -->
-    <div id="ventana-secreta">
-        <div id="contenido-secreto">
-            <p id="texto-secreto"></p>
-            <button onclick="cerrarSecreto()">Cerrar</button>
-        </div>
-    </div>
+    <button class="next" onclick="moverGaleria(1)">❯</button>
+</div>
 
-    <h1>HOLA MI NEGRITA HERMOSA 🥰</h1>
-    <h2>Hoy cumplimos 11 meses de novios y 12 meses de mejores amigos</h2>
-    <div id="contador"></div>
+<div class="indicadores" id="indicadores"></div>
 
-    <button onclick="modoNoche()" id="botonModo">🌙 Activar modo noche</button><br>
-    <button id="botonMusica" onclick="toggleMusica()">Pausar música</button>
-    <img src="https://i.postimg.cc/d0qzvrbT/foto.jpg" alt="Nosotros" id="foto" onclick="corazonesExtra()">
+<button onclick="mostrarPoema()">Leer poema</button>
+<p id="poema"></p>
 
-    <button onclick="mensaje()">Leer mensaje</button>
-    <p id="sorpresa"></p>
+</div>
 
-    <!-- GALERÍA -->
-    <h2 style="color:#d63384;margin-top:40px;">NUESTROS MOMENTOS 📸</h2>
-    <div class="galeria-contenedor">
-        <button class="prev" onclick="moverGaleria(-1)">❮</button>
-        <div class="galeria">
-            <div class="slider" id="slider">
-                <img src="https://i.postimg.cc/fTnsk0Ng/foto1.jpg">
-                <img src="https://i.postimg.cc/267QvZJp/foto2.jpg">
-                <img src="https://i.postimg.cc/mg17jqqH/foto3.jpg">
-                <img src="https://i.postimg.cc/Rh0HHbKL/foto4.jpg">
-                <img src="https://i.postimg.cc/tgTJDV72/foto5.jpg">
-                <img src="https://i.postimg.cc/ZqGm39NV/foto6.jpg">
-                <img src="https://i.postimg.cc/rsJ2vQP9/foto7.jpg">
-                <img src="https://i.postimg.cc/nc3t2S7X/foto8.jpg">
-                <img src="https://i.postimg.cc/Nf3k3BRD/foto9.jpg">
-            </div>
-        </div>
-        <button class="next" onclick="moverGaleria(1)">❯</button>
-    </div>
-    <div class="indicadores" id="indicadores"></div>
+<script src="script.js"></script>
 
-    <button onclick="mostrarPoema()">Leer poema</button>
-    <p id="poema"></p>
-
-    <script src="script.js"></script>
 </body>
-
 </html>

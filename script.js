@@ -29,30 +29,22 @@ setInterval(actualizar, 1000);
    MENSAJE Y POEMA
    ========================== */
 let textoMensaje = `Eres lo mejor que me ha pasado ❤️ 
-Gracias por estar conmigo, 
-por apoyarme 🫶 y por todos los 
-momentos que compartimos juntos.
+Gracias por estar conmigo, por apoyarme 🫶 y por todos los momentos que compartimos juntos. 
+Cada día contigo es especial para mí y me hace muy feliz 👉👈 saber que te tengo a mi lado. 
+Espero que sigamos creando muchos más recuerdos juntos, porque contigo todo se siente más bonito. 💖`;
 
-Cada día contigo es especial para 
-mí y me hace muy feliz 👉👈 
-saber que te tengo a mi lado. 
-
-Espero que sigamos creando muchos 
-más recuerdos juntos, porque contigo 
-todo se siente más bonito. 💖`;
-
-let textoPoema = `Desde que llegaste a mi vida ✨
+let textoPoema = `Desde que llegaste a mi vida
 todo se siente diferente,
-🌹 los días son más bonitos 
+los días son más bonitos 
 y mi corazón más fuerte. 
 
-Tu sonrisa ilumina ☄️ mis momentos, 
+Tu sonrisa ilumina mis momentos, 
 tu voz calma mis pensamientos, 
 y cada instante contigo se vuelve 
-uno de 🌻 mis recuerdos más bellos. 
+uno de mis recuerdos más bellos. 
 
 Gracias por caminar a mi lado, 
-por cada abrazo 😍 y cada mirada, 
+por cada abrazo y cada mirada, 
 porque contigo aprendí que el 
 amor sí puede ser para siempre. ❤️`;
 
@@ -296,8 +288,116 @@ function toggleMusica() {
         musica.pause();
         botonMusica.textContent = "Seguir reproduciendo";
     }
+}
+
+let pin = "";
+const pinCorrecto = "0904"; // cambia aquí tu PIN
+
+function agregarNumero(num){
+    if(pin.length < 4){
+        pin += num;
+        actualizarCirculos();
+    }
+
+    if(pin.length === 4){
+        verificarPin();
+    }
+}
+
+function borrar(){
+    pin = pin.slice(0,-1);
+    actualizarCirculos();
+}
+
+function actualizarCirculos(){
+    const puntos = document.querySelectorAll(".punto");
+    puntos.forEach((p,i)=>{
+        p.classList.toggle("lleno", i < pin.length);
+    });
+}
+
+function verificarPin(){
+    if(pin === pinCorrecto){
+
+        const bloqueo = document.getElementById("bloqueo");
+
+        explosionCorazones(); // 💖 explosión romántica
+
+        bloqueo.classList.add("bloqueo-salida");
+
+        setTimeout(()=>{
+
+            bloqueo.style.display="none";
+            document.getElementById("contenido").style.display="block";
+            document.getElementById("musica").play();
+
+        },900);
+
+    }else{
+        alert("PIN incorrecto 💔");
+        pin="";
+        actualizarCirculos();
+    }
+}
+
+function animacionEntrada(){
+
+    for(let i=0;i<40;i++){
+
+        let corazon = document.createElement("div");
+        corazon.innerHTML="💖";
+
+        corazon.style.position="fixed";
+        corazon.style.left=Math.random()*100+"vw";
+        corazon.style.top=Math.random()*100+"vh";
+        corazon.style.fontSize="30px";
+        corazon.style.zIndex="9998";
+        corazon.style.animation="caer 2s linear";
+
+        document.body.appendChild(corazon);
+
+        setTimeout(()=>{
+            corazon.remove();
+        },2000);
+
+    }
 
 }
 
+function explosionCorazones(){
 
+    for(let i=0;i<350;i++){
 
+        let corazon = document.createElement("div");
+        corazon.innerHTML="💖";
+
+        corazon.style.position="fixed";
+        corazon.style.left="50%";
+        corazon.style.top="50%";
+        corazon.style.fontSize="40px";
+        corazon.style.pointerEvents="none"; 
+        corazon.style.zIndex="10000";
+
+        let x = (Math.random()-0.5)*1800;
+        let y = (Math.random()-0.5)*1800;
+
+        corazon.animate(
+            [
+                {transform:"translate(-50%,-50%) scale(1)", opacity:1},
+                {transform:`translate(${x}px, ${y}px) scale(0.5)`, opacity:0}
+            ],
+            {
+                duration:900,
+                easing:"ease-out"
+            }
+        );
+
+        document.body.appendChild(corazon);
+
+        setTimeout(()=>{
+            corazon.remove();
+        },900);
+
+    }
+
+}
