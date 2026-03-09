@@ -29,8 +29,9 @@ setInterval(actualizar, 1000);
    MENSAJE Y POEMA
    ========================== */
 let textoMensaje = `Eres lo mejor que me ha pasado ❤️ 
-Gracias por estar conmigo, por apoyarme 🫶 
-y por todos los momentos que compartimos juntos. 
+Gracias por estar conmigo, 
+por apoyarme 🫶 y por todos los 
+momentos que compartimos juntos. 
 Cada día contigo es especial para mí y me hace muy feliz 👉👈 saber que te tengo a mi lado. 
 Espero que sigamos creando muchos más recuerdos juntos, porque contigo todo se siente más bonito. 💖`;
 
@@ -291,3 +292,4 @@ function toggleMusica() {
     }
 
 }
+
