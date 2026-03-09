@@ -31,26 +31,28 @@ setInterval(actualizar, 1000);
 let textoMensaje = `Eres lo mejor que me ha pasado ❤️ 
 Gracias por estar conmigo, 
 por apoyarme 🫶 y por todos los 
-momentos que compartimos juntos. 
+momentos que compartimos juntos.
+
 Cada día contigo es especial para 
 mí y me hace muy feliz 👉👈 
 saber que te tengo a mi lado. 
+
 Espero que sigamos creando muchos 
 más recuerdos juntos, porque contigo 
 todo se siente más bonito. 💖`;
 
-let textoPoema = `Desde que llegaste a mi vida
+let textoPoema = `Desde que llegaste a mi vida ✨
 todo se siente diferente,
-los días son más bonitos 
+🌹 los días son más bonitos 
 y mi corazón más fuerte. 
 
-Tu sonrisa ilumina mis momentos, 
+Tu sonrisa ilumina ☄️ mis momentos, 
 tu voz calma mis pensamientos, 
 y cada instante contigo se vuelve 
-uno de mis recuerdos más bellos. 
+uno de 🌻 mis recuerdos más bellos. 
 
 Gracias por caminar a mi lado, 
-por cada abrazo y cada mirada, 
+por cada abrazo 😍 y cada mirada, 
 porque contigo aprendí que el 
 amor sí puede ser para siempre. ❤️`;
 
@@ -296,5 +298,6 @@ function toggleMusica() {
     }
 
 }
+
 
 
